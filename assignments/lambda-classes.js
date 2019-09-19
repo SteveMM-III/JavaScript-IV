@@ -123,7 +123,7 @@ const chey = new ProjectManager({
    favInstructor: 'Sally'
 });/*-----------------------------------------*/
 
-
+log( 'lambda-classes.js tests' );
 /*=== Tests ==================================================*/
 bob.speak();
 sara.speak();
