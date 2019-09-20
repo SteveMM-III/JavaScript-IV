@@ -184,7 +184,7 @@ if ( myHero.healthPoints > 0 ) {
    log( myVillain.destroy() );
 } else {
    log( `The winner is: ${myVillain.name}` );
-   log(  myVillain )
+   log(  myVillain );
    log( myHero.destroy() );
 }
 /*=== EoF ==================================================*/
