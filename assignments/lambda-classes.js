@@ -3,21 +3,21 @@
 /*=== Classes ==================================================*/
 /*=== Person ===*/
 class Person {
-   constructor( params ) {
-      this.name = params.name;
-      this.age = params.age;
-      this.location = params.location;
+   constructor( args ) {
+      this.name = args.name;
+      this.age = args.age;
+      this.location = args.location;
    }
    speak() { log( `Hello my name is ${this.name}, I am from ${this.location}` ); }
 }/*-----------------------------------------*/
 
 /*=== Instructor ===*/
 class Instructor extends Person {
-   constructor( params ) {
-      super( params );
-      this.specialty = params.specialty;
-      this.favLanguage = params.favLanguage;
-      this.catchPhrase = params.catchPhrase;
+   constructor( args ) {
+      super( args );
+      this.specialty = args.specialty;
+      this.favLanguage = args.favLanguage;
+      this.catchPhrase = args.catchPhrase;
    }
    demo( subject ) { log( `Today we are learning about ${subject}` ); }
    grade( student, subject ) { log( `${student.name} receives a perfect score on ${subject}` ); }
@@ -25,11 +25,11 @@ class Instructor extends Person {
 
 /*=== Student ===*/
 class Student extends Person {
-   constructor( params ) {
-      super( params );
-      this.previousBackground = params.previousBackground;
-      this.className = params.className;
-      this.favSubjects = params.favSubjects;
+   constructor( args ) {
+      super( args );
+      this.previousBackground = args.previousBackground;
+      this.className = args.className;
+      this.favSubjects = args.favSubjects;
    }
    listsSubjects() { log( this.favSubjects ); }
    prAssignment( subject ) { log( `${this.name} has submitted a PR for ${subject}` ); }
@@ -38,10 +38,10 @@ class Student extends Person {
 
 /*=== Project Manager ===*/
 class ProjectManager extends Instructor {
-   constructor( params ) {
-      super( params );
-      this.gradClassName = params.gradClassName;
-      this.favInstructor = params.favInstructor;
+   constructor( args ) {
+      super( args );
+      this.gradClassName = args.gradClassName;
+      this.favInstructor = args.favInstructor;
    }
    standUp( channel ) { log( `${this.name} announces to ${channel}, @channel standUp time!` ); }
    debugsCode( student, subject ) { log( `${this.name} debugs ${student.name}'s code on ${subject}` ); }

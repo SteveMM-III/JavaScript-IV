@@ -11,19 +11,19 @@ Prototype Refactor
 /*=== Classes ==================================================*/
 /*=== GameObject ===*/
 class GameObject {
-   constructor( params ) {
-      this.createdAt = params.createdAt;
-      this.name = params.name;
-      this.dimensions = params.dimensions;
+   constructor( args ) {
+      this.createdAt = args.createdAt;
+      this.name = args.name;
+      this.dimensions = args.dimensions;
    }
    destroy() { return `${this.name} was removed from the game.`; }
 }/*-----------------------------------------*/
 
 /*=== CharacterStats ===*/
 class CharacterStats extends GameObject {
-   constructor( params ) {
-      super( params );
-      this.healthPoints = params.healthPoints;
+   constructor( args ) {
+      super( args );
+      this.healthPoints = args.healthPoints;
    }
    takeDamage( amount = 100 ) {
       this.healthPoints -= amount;
@@ -33,27 +33,27 @@ class CharacterStats extends GameObject {
 
 /*=== Humanoid ===*/
 class Humanoid extends CharacterStats {
-   constructor( params ) {
-      super( params );
-      this.team = params.team;
-      this.weapons = params.weapons;
-      this.language = params.language;
+   constructor( args ) {
+      super( args );
+      this.team = args.team;
+      this.weapons = args.weapons;
+      this.language = args.language;
    }
    greet() { return `${this.name} offers a greeting in ${this.language}.`; }
 }/*-----------------------------------------*/
 
 /*=== Hero ===*/
 class Hero extends Humanoid {
-   constructor( params ) {
-      super( params );
+   constructor( args ) {
+      super( args );
       this.alignment = 'good';
    }
 }/*-----------------------------------------*/
 
 /*=== Villain ===*/
 class Villain extends Humanoid {
-   constructor( params ) {
-      super( params );
+   constructor( args ) {
+      super( args );
       this.alignment = 'evil';
    }
 }/*-----------------------------------------*/
